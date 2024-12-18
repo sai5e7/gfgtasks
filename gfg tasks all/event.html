@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon 3.0 Registration Form</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Hackathon 3.0 Registration Form</h1>
+        <p><strong>Event Details:</strong></p>
+        <ul>
+            <li><strong>Event Name:</strong> Hackathon 3.0</li>
+            <li><strong>Date:</strong> December 28, 2024</li>
+            <li><strong>Time:</strong> 9:00 AM - 6:00 PM</li>
+            <li><strong>Venue:</strong> AITAM College, Tekkali</li>
+        </ul>
+        <p><strong>Note:</strong> Additional provisions and schedules are provided based on whether you are a Day Scholar or a Hosteller.</p>
+        
+        <!-- Event Rules Section -->
+        <h2>Event Rules</h2>
+        <ul>
+            <li>Participants must arrive at the venue by 9:00 AM for registration.</li>
+            <li>Each team must have a minimum of 2 and a maximum of 4 members.</li>
+            <li>No plagiarism is allowed. Participants found copying code or ideas will be disqualified.</li>
+            <li>Participants must bring their own laptops and required tools for the hackathon.</li>
+            <li>Participants should follow the guidelines set by the event organizers for the safety and smooth operation of the event.</li>
+            <li>Participants should respect the event's schedule and maintain decorum at all times.</li>
+            <li>In case of any disputes, the decision of the event organizers will be final.</li>
+        </ul>
+        <hr>
+
+        <form action="/submit_registration" method="post" enctype="multipart/form-data">
+            <!-- User Details Section -->
+            <fieldset>
+                <legend>User Details</legend>
+
+                <label for="fullName">Full Name:</label><br>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required><br><br>
+
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required><br><br>
+
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required><br><br>
+
+                <label for="dob">Date of Birth:</label><br>
+                <input type="date" id="dob" name="dob" required><br><br>
+
+                <label>Accommodation Type:</label><br>
+                <input type="radio" id="dayScholar" name="accommodation" value="Day Scholar" required>
+                <label for="dayScholar">Day Scholar</label><br>
+                <input type="radio" id="hosteller" name="accommodation" value="Hosteller">
+                <label for="hosteller">Hosteller</label><br><br>
+            </fieldset>
+            <br>
+
+            <!-- Day Scholar Section -->
+            <fieldset>
+                <legend>Day Scholar Details</legend>
+                <label for="commute">Mode of Commute:</label><br>
+                <select id="commute" name="commute">
+                    <option value="">-- Select Your Mode of Commute --</option>
+                    <option value="Bus">Bus</option>
+                    <option value="Bike">Bike</option>
+                    <option value="Car">Car</option>
+                    <option value="Public Transport">Public Transport</option>
+                </select><br><br>
+
+                <label for="departureTime">Preferred Departure Time:</label><br>
+                <input type="time" id="departureTime" name="departureTime"><br><br>
+
+                <label for="lunch">Would you like to opt for lunch?</label><br>
+                <input type="radio" id="lunchYes" name="lunch" value="Yes">
+                <label for="lunchYes">Yes</label><br>
+                <input type="radio" id="lunchNo" name="lunch" value="No">
+                <label for="lunchNo">No</label><br><br>
+            </fieldset>
+            <br>
+
+            <!-- Hosteller Section -->
+            <fieldset>
+                <legend>Hosteller Details</legend>
+                <label for="roomNumber">Room Number:</label><br>
+                <input type="text" id="roomNumber" name="roomNumber" placeholder="Enter your room number"><br><br>
+
+                <label for="wardenApproval">Upload Warden Approval Letter:</label><br>
+                <input type="file" id="wardenApproval" name="wardenApproval" accept="image/*,.pdf"><br><br>
+
+                <label for="meals">Would you like to opt for extra meals during the event?</label><br>
+                <input type="radio" id="mealsYes" name="meals" value="Yes">
+                <label for="mealsYes">Yes</label><br>
+                <input type="radio" id="mealsNo" name="meals" value="No">
+                <label for="mealsNo">No</label><br><br>
+
+                <p><strong>Note:</strong> Hostellers must adhere to the hostel curfew timings.</p>
+            </fieldset>
+            <br>
+
+            <!-- Submit Section -->
+            <button type="submit">Register</button>
+            <button type="reset">Reset</button>
+        </form>
+    </div>
+</body>
+</html>
